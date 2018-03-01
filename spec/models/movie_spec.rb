@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  mcu = Universe.create!(name: "Marvel Cinematic Universe", blurb: "The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe that is centered on a series of superhero films, independently produced by Marvel Studios and based on characters that appear in American comic books published by Marvel Comics.")
+  ironman = Movie.create!(title: "Iron Man", summary: "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil.", release: "May 2 2008", universe: mcu)
+  context 'attributes' do
+    it 'has a title' do
+      expect(ironman.title).to eq "Iron Man"
+    end
+    it 'has a blurb' do
+      expect(ironman.summary).to eq "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil."
+    end
+  end
 end
