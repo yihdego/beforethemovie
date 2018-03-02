@@ -10,5 +10,8 @@ RSpec.describe Movie, type: :model do
     it 'has a blurb' do
       expect(ironman.summary).to eq "After being held captive in an Afghan cave, billionaire engineer Tony Stark creates a unique weaponized suit of armor to fight evil."
     end
+    it 'has a release date' do
+      expect(ironman.release).to eq (Date.parse('2008-05-02'))
+    end
   end
 end
