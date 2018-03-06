@@ -5,6 +5,8 @@
 <%= @movie.summary %>
 <%= @movie.release %>
 
+<h2><%= link_to "Add to a Universe", add_universe_url %></h2>
+
 <h2>Trailers</h2>
 <%= render partial: 'video', collection: @videos, as: :video %>
 
