@@ -1,4 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= link_to 'Universes', universes_path %></h1>
+
+<h2><%= @universe.name %></h2>
+
+<%= @universe.blurb %>
+
 <%= link_to 'Edit', edit_universe_path(@universe) %> |
-<%= link_to 'Back', universes_path %>

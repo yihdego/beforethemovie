@@ -25,7 +25,6 @@ class MoviesController < ApplicationController
 
   def add_universe
     @universes = Universe.all
-    p @universes
     render :add_universe
   end
 
