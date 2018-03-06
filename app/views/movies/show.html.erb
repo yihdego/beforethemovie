@@ -5,5 +5,15 @@
 <%= @movie.summary %>
 <%= @movie.release %>
 
+<h2>Trailers</h2>
+<%= render partial: 'video', collection: @videos, as: :video %>
+
+<h2>Add Trailer</h2>
+<ziggeo ziggeo-limit="60"
+        ziggeo-width="320"
+        ziggeo-height="240"
+        ziggeo-perms="allowupload"
+        ziggeo-tags="<%= @movie.id %>"></ziggeo>
+
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
