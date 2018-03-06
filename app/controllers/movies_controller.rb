@@ -23,6 +23,11 @@ class MoviesController < ApplicationController
   def edit
   end
 
+  def add_universe
+    @universes = Universe.all
+    render :add_universe
+  end
+
   # POST /movies
   # POST /movies.json
   def create
