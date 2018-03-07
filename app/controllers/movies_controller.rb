@@ -23,11 +23,18 @@ class MoviesController < ApplicationController
   def edit
   end
 
-  def add_universe
+  def fetch_universes
     @universes = Universe.all
-    render :add_universe
+    render :fetch_universe
   end
 
+  def add_universe
+    p params
+    @movie = Movie.find(params[:id])
+    @movie.add_universe(params[:universe_id])
+    @movie.save
+    redirect_to @movie
+  end
   # POST /movies
   # POST /movies.json
   def create

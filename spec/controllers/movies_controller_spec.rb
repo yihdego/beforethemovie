@@ -69,7 +69,7 @@ RSpec.describe MoviesController, type: :controller do
     ironman2 = Movie.create!(title: "Iron Man 2", summary: "With the world now aware of his identity as Iron Man, Tony Stark must contend with both his declining health and a vengeful mad man with ties to his father's legacy.", release: "May 7 2010")
     it "associates a movie universe to a movie" do
       post :add_universe, params: {id: ironman2.id, universe_id: mcu.id}
-      expect(ironman2.universe).to eq mcu
+      expect(ironman2.reload.universe).to eq mcu
     end
   end
 
