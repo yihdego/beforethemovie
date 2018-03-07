@@ -30,8 +30,8 @@ class MoviesController < ApplicationController
 
   def add_universe
     p params
-    @movie = Movie.find(params[:id])
-    @movie.add_universe(params[:universe_id])
+    @movie = Movie.find(add_universe_params[:id])
+    @movie.add_universe(add_universe_params[:universe_id])
     @movie.save
     redirect_to @movie
   end
@@ -84,5 +84,9 @@ class MoviesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
       params.require(:movie).permit(:title, :summary, :release)
+    end
+
+    def add_universe_params
+      params.permit(:id, :universe_id)
     end
 end
