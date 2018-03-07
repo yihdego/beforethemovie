@@ -12,7 +12,7 @@
     <%= @movie.release %>
   </li>
   <li>
-    <%= @movie.universe.name %>
+    <%= link_to @movie.universe.name, @movie.universe %>
   </li>
 </ul>
 
