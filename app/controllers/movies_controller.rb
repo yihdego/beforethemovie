@@ -24,12 +24,12 @@ class MoviesController < ApplicationController
   end
 
   def fetch_universes
+    @movie = Movie.find(add_universe_params[:id])
     @universes = Universe.all
     render :fetch_universe
   end
 
   def add_universe
-    p params
     @movie = Movie.find(add_universe_params[:id])
     @movie.add_universe(add_universe_params[:universe_id])
     @movie.save

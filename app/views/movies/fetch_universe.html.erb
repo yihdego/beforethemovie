@@ -1,3 +1,5 @@
 <% @universes.each do |universe| %>
   <%= universe.name %>
+  <%= button_to "Add", { action: "add_universe", id: @movie.id, universe_id: universe.id },
+                                method: :add_universe %>
 <% end %>
