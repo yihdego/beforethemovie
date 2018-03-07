@@ -14,4 +14,9 @@ RSpec.describe Movie, type: :model do
       expect(ironman.release).to eq (Date.parse('2008-05-02'))
     end
   end
+  context 'associations' do
+    it 'belongs to a movie universe' do
+      expect(ironman.universe).to eq mcu
+    end
+  end
 end
