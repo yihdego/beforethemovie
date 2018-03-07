@@ -64,6 +64,24 @@ RSpec.describe MoviesController, type: :controller do
     end
   end
 
+  describe "fetch_universes" do
+    mcu = Universe.create!(name: "Marvel Cinematic Universe", blurb: "The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe that is centered on a series of superhero films, independently produced by Marvel Studios and based on characters that appear in American comic books published by Marvel Comics.")
+    ironman2 = Movie.create!(title: "Iron Man 2", summary: "With the world now aware of his identity as Iron Man, Tony Stark must contend with both his declining health and a vengeful mad man with ties to his father's legacy.", release: "May 7 2010")
+    it 'retrieves a list of movie universes' do
+      get :fetch_universes, params: {id: ironman2.id}
+      expect(assigns[:universes]).to include(mcu)
+    end
+  end
+
+  describe "add universe" do
+    mcu = Universe.create!(name: "Marvel Cinematic Universe", blurb: "The Marvel Cinematic Universe (MCU) is an American media franchise and shared universe that is centered on a series of superhero films, independently produced by Marvel Studios and based on characters that appear in American comic books published by Marvel Comics.")
+    ironman2 = Movie.create!(title: "Iron Man 2", summary: "With the world now aware of his identity as Iron Man, Tony Stark must contend with both his declining health and a vengeful mad man with ties to his father's legacy.", release: "May 7 2010")
+    it "associates a movie universe to a movie" do
+      post :add_universe, params: {id: ironman2.id, universe_id: mcu.id}
+      expect(ironman2.reload.universe).to eq mcu
+    end
+  end
+
   describe "GET #edit" do
     it "returns a success response" do
       movie = Movie.create! valid_attributes
