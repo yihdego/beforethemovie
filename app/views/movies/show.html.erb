@@ -6,14 +6,16 @@
 
 <ul>
   <li>
-    <%= @movie.summary %>
+    Summary: <%= @movie.summary %>
   </li>
   <li>
-    <%= @movie.release %>
+    Release date: <%= @movie.release %>
   </li>
-  <li>
-    <%= link_to @movie.universe.name, @movie.universe %>
-  </li>
+  <% if @movie.universe %>
+    <li>
+      Universe: <%= link_to @movie.universe.name, @movie.universe %>
+    </li>
+  <% end %>
 </ul>
 
 <h3><%= link_to "Add to a Universe", :controller => "movies", :action => "fetch_universes", :id => @movie.id  %></h3>
