@@ -1,0 +1,8 @@
+<h2>Welcome</h2>
+
+<p>Before The Movie is a Rails web app. The core idea is to make a cohesive viewing experience of trailers.</p>
+<p>The movies and movie universes they belong to are user inputed and users can upload trailers to a movie.</p>
+
+<h2>Featured Movie Universe</h2>
+<% random_universe = Universe.all.sample %>
+<%= link_to random_universe.name, random_universe %>

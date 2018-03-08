@@ -5,5 +5,8 @@
 <h2><%= @universe.name %></h2>
 
 <%= @universe.blurb %>
-
 <%= link_to 'Edit', edit_universe_path(@universe) %> |
+
+<% @universe.movies. each do |movie| %>
+  <%= link_to movie.title, movie %>
+<% end %>
