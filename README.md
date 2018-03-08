@@ -1,24 +1,12 @@
-# README
+# Before the Movie
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Before The Movie is a Rails web app. The core idea is to make a cohesive viewing experience of trailers.
 
-Things you may want to cover:
+The movies and movie universes they belong to are user inputed and users can upload trailers to a movie.
 
-* Ruby version
+## Technologies
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Framework: Ruby on Rails
+Database: PostgreSQL
+Video Hosting: Ziggeo
+Styling: Bootstrap
