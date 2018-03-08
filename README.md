@@ -6,7 +6,7 @@ The movies and movie universes they belong to are user inputed and users can upl
 
 ## Technologies
 
-Framework: Ruby on Rails
-Database: PostgreSQL
-Video Hosting: Ziggeo
-Styling: Bootstrap
+* Framework: Ruby on Rails
+* Database: PostgreSQL
+* Video Hosting: Ziggeo
+* Styling: Bootstrap
