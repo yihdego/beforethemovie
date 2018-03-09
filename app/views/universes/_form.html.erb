@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="form-group">
     <%= form.label :name %>
     <%= form.text_field :name %>
-    <%= form.text_area :blurb, size: "60x12", placeholder: "Movie universe summary here..."%>
+    <%= form.text_area :blurb, size: "4x4", :class => placeholder: "Movie universe summary here..."%>
     <%= form.submit %>
   </div>
 <% end %>

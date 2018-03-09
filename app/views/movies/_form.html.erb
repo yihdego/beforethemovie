@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div class="actions">
+  <div class="form-group">
     <%= form.label :title %>
     <%= form.text_field :title %>
-    <%= form.text_area :summary, size: "60x12", placeholder: "Movie summary here..." %>
+    <%= form.text_area :summary, size: "4x4", :class => "form-control",  placeholder: "Movie summary here..." %>
     <%= form.date_select :release, { :start_year => 1913 } %>
     <%= form.submit "Add"%>
   </div>
